@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F477768-4BBB-4897-8C97-065FA08F4FCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PiStore</RootNamespace>
+    <AssemblyName>PiStore</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.100.14\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.7.100.14\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DAL\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.6.2.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.6.2\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Command\AddEmployeeCommand.cs" />
+    <Compile Include="Class\Command\ICommand.cs" />
+    <Compile Include="Class\Command\Invoker.cs" />
+    <Compile Include="Class\Entity\Employee.cs" />
+    <Compile Include="Class\Repository\EmployeeRepository.cs" />
+    <Compile Include="Class\Repository\IEmployeeRepository.cs" />
+    <Compile Include="Class\ValidationStrategy\EmptyValidationStrategy.cs" />
+    <Compile Include="Class\ValidationStrategy\IValidationStrategy.cs" />
+    <Compile Include="Class\ValidationStrategy\PasswordValidationStrategy.cs" />
+    <Compile Include="Class\ValidationStrategy\UsernameValidationStrategy.cs" />
+    <Compile Include="Class\ValidationStrategy\ValidationContext.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBill.Designer.cs">
+      <DependentUpon>ManageBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageClient.Designer.cs">
+      <DependentUpon>ManageClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageEmployee.Designer.cs">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageOrders.Designer.cs">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePlaceOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePlaceOrder.Designer.cs">
+      <DependentUpon>ManagePlaceOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageProduct.Designer.cs">
+      <DependentUpon>ManageProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBill.resx">
+      <DependentUpon>ManageBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageClient.resx">
+      <DependentUpon>ManageClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageEmployee.resx">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageOrders.resx">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePlaceOrder.resx">
+      <DependentUpon>ManagePlaceOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageProduct.resx">
+      <DependentUpon>ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Bill.datasource" />
+    <None Include="Properties\DataSources\Client.datasource" />
+    <None Include="Properties\DataSources\DBConnect.datasource" />
+    <None Include="Properties\DataSources\Employee.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\ManageBill.datasource" />
+    <None Include="Properties\DataSources\ManageClient.datasource" />
+    <None Include="Properties\DataSources\ManageEmployee.datasource" />
+    <None Include="Properties\DataSources\ManageOrders.datasource" />
+    <None Include="Properties\DataSources\ManagePlaceOrder.datasource" />
+    <None Include="Properties\DataSources\ManageProduct.datasource" />
+    <None Include="Properties\DataSources\Menu.datasource" />
+    <None Include="Properties\DataSources\Order.datasource" />
+    <None Include="Properties\DataSources\OrderItem.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.AccountTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.BillTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.ClientTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.EmployeeTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.OrderItemTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.OrdersTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.ProductTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.QueriesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.spAccountTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.sp_AddClientTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.sp_AddEmployeeTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.sp_AddProductTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.View_ClientTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.View_EmployeeTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.View_OrdersTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.PiStoreDBDataSetTableAdapters.View_ProductTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PiStore.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\PiStore.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.AccountDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.AccountRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.AccountRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.AccountRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.BillDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.BillRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.BillRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.BillRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ClientDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ClientRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ClientRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ClientRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.EmployeeDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.EmployeeRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.EmployeeRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.EmployeeRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrderItemDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrderItemRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrderItemRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrderItemRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrdersDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrdersRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrdersRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.OrdersRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ProductDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ProductRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ProductRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.ProductRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.spAccountDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.spAccountRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.spAccountRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.spAccountRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddClientDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddClientRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddClientRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddClientRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddEmployeeDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddEmployeeRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddEmployeeRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddEmployeeRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddProductDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddProductRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddProductRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.sp_AddProductRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ClientDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ClientRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ClientRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ClientRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_EmployeeDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_EmployeeRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_EmployeeRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_EmployeeRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_OrdersDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_OrdersRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_OrdersRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_OrdersRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ProductDataTable.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ProductRow.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ProductRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBDataSet.View_ProductRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\PiStoreDBEntities.datasource" />
+    <None Include="Properties\DataSources\Product.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
+    <None Include="Properties\DataSources\View_Client.datasource" />
+    <None Include="Properties\DataSources\View_Employee.datasource" />
+    <None Include="Properties\DataSources\View_Orders.datasource" />
+    <None Include="Properties\DataSources\View_Product.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{7728c544-13ed-4716-b61a-a541ad952a0a}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

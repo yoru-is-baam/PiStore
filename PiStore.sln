@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiStore", "PiStore\PiStore.csproj", "{9F477768-4BBB-4897-8C97-065FA08F4FCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{7728C544-13ED-4716-B61A-A541AD952A0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F477768-4BBB-4897-8C97-065FA08F4FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F477768-4BBB-4897-8C97-065FA08F4FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F477768-4BBB-4897-8C97-065FA08F4FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F477768-4BBB-4897-8C97-065FA08F4FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7728C544-13ED-4716-B61A-A541AD952A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7728C544-13ED-4716-B61A-A541AD952A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7728C544-13ED-4716-B61A-A541AD952A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7728C544-13ED-4716-B61A-A541AD952A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AD42A1D-B0B3-496F-BC67-4912DAC60D73}
+	EndGlobalSection
+EndGlobal
